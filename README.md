@@ -122,9 +122,11 @@ a. Static pictures
 ```shell
 python3 picEngineInfer.py  
 ```
-![](assets/_result.jpg)
-![](assets/_result.jpg)
-![](assets/_result.jpg)
+![](test_output/basketball.jpg)  
+
+![](test_output/fadeaway.jpeg)  
+
+![](test_output/person.jpg)
 
 b. Real-time webcam (the output format, (480, 640, 3))
 ```shell
