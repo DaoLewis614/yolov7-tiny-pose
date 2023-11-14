@@ -104,7 +104,6 @@ cd {this repo}YoloLayer_TRT_v7.0
 mkdir build && cd build
 cmake .. && make
 ```
-
 gain `libyolo.so`
 
 #### b. Build TensorRT engine  
