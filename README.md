@@ -120,8 +120,8 @@ After a long time, gain the engine 🉑
 
 
 ### 3.Inference  
-_Note: modify the CONF_THRESH and IOU_THRESHOLD for your tailored model engine_
-a. Static pictures
+_Note: modify the CONF_THRESH and IOU_THRESHOLD for your tailored model engine_  
+a. Static pictures  
 ```shell
 python3 picEngineInfer.py  
 ```
