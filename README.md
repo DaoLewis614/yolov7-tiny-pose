@@ -22,7 +22,9 @@ TensorRT: 8.4.1.5
 OpenCV: 4.5.4 with CUDA: NO  
 
 ## Dataset
-* Download COCO2017 dataset images ([train](http://images.cocodataset.org/zips/train2017.zip), [val](http://images.cocodataset.org/zips/val2017.zip),  and [labels](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/coco2017labels-keypoints.zip).)
+* Download COCO2017 dataset images ([train](http://images.cocodataset.org/zips/train2017.zip), [val](http://images.cocodataset.org/zips/val2017.zip), [test](http://images.cocodataset.org/zips/test2017.zip))  and [labels](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/coco2017labels-keypoints.zip).)
+* _Note: test-dev2017.txt is in [labels](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/coco2017labels-segments.zip).
+* However the official website does not provide labels for the test set_
   
 ## Train
 _Note: if your training is interrupted and you want to retrain another one, you had better delete the train_2017.cache and val_2017.cache_
@@ -31,6 +33,7 @@ python3 train.py --data data/coco_kpts.yaml --cfg cfg/yolov7-tiny-pose.yaml --we
 ```
 
 ## Test
+_Note: this uses val set to test_
 ``` shell
 python3 test.py --data data/coco_kpts.yaml --img 960 --conf 0.001 --iou 0.65 --weights weights/yolov7-tiny-pose.pt --kpt-label
 ```
@@ -128,6 +131,8 @@ b. Real-time webcam (the output format, (480, 640, 3))
 ```shell
 python3 webcamEngineInfer.py 
 ```
+The FPS is about 100
+
 
 
 
