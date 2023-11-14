@@ -25,6 +25,7 @@ OpenCV: 4.5.4 with CUDA: NO
 * Download COCO2017 dataset images ([train](http://images.cocodataset.org/zips/train2017.zip), [val](http://images.cocodataset.org/zips/val2017.zip),  and [labels](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/coco2017labels-keypoints.zip).)
   
 ## Train
+_Note: if your training is interrupted and you want to retrain another one, you had better delete the train_2017.cache and val_2017.cache_
 ``` shell
 python3 train.py --data data/coco_kpts.yaml --cfg cfg/yolov7-tiny-pose.yaml --weights "" --batch-size 32 --img 640 --kpt-label --name yolov7-tiny-pose --hyp data/hyp_pose.yaml  --epoch 300
 ```
@@ -122,11 +123,7 @@ a. Static pictures
 ```shell
 python3 picEngineInfer.py  
 ```
-![](test_output/basketball.jpg)  
-
-![](test_output/fadeaway.jpeg)  
-
-![](test_output/person.jpg)
+![](test_output/basketball.jpg)
 
 b. Real-time webcam (the output format, (480, 640, 3))
 ```shell
