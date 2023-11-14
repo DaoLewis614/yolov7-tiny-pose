@@ -32,7 +32,7 @@ python3 train.py --data data/coco_kpts.yaml --cfg cfg/yolov7-tiny-pose.yaml --we
 
 ## Test
 ``` shell
-python3 test.py --data data/coco_kpts.yaml --img 960 --conf 0.001 --iou 0.65 --weights best.pt --kpt-label
+python3 test.py --data data/coco_kpts.yaml --img 960 --conf 0.001 --iou 0.65 --weights weights/yolov7-tiny-pose.pt --kpt-label
 ```
 
 ## Deployment
