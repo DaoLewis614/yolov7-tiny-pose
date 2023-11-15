@@ -24,7 +24,7 @@ OpenCV: 4.5.4 with CUDA: NO
 ## Dataset
 * Download COCO2017 dataset images ([train](http://images.cocodataset.org/zips/train2017.zip), [val](http://images.cocodataset.org/zips/val2017.zip), [test](http://images.cocodataset.org/zips/test2017.zip))  and [labels](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/coco2017labels-keypoints.zip).)
 * _Note: test-dev2017.txt is in [labels](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/coco2017labels-segments.zip).
-* However the official website does not provide labels for the test set_
+  However the official website does not provide labels for the test set_
   
 ## Train
 _Note: if your training is interrupted and you want to retrain another one, you had better delete the train_2017.cache and val_2017.cache_  
