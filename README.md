@@ -101,7 +101,7 @@ a. Static pictures
 ```shell
 python3 picEngineInfer.py  
 ```
-![](test_output/fadeaway.jpg)
+![](test_output/fadeaway.jpeg)
 
 b. Real-time webcam (the output format, (480, 640, 3))
 ```shell
