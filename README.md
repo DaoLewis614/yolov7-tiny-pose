@@ -27,7 +27,9 @@ OpenCV: 4.5.4 with CUDA: NO
 * However the official website does not provide labels for the test set_
   
 ## Train
-_Note: if your training is interrupted and you want to retrain another one, you had better delete the train_2017.cache and val_2017.cache_
+_Note: if your training is interrupted and you want to retrain another one, you had better delete the train_2017.cache and val_2017.cache
+       make sure that your Class Ikeypoint in model/yolo.py is as below before running train.py otherwise it would be wrong_
+![](pic/train.png)
 ``` shell
 python3 train.py --data data/coco_kpts.yaml --cfg cfg/yolov7-tiny-pose.yaml --weights "" --batch-size 32 --img 640 --kpt-label --name yolov7-tiny-pose --hyp data/hyp_pose.yaml  --epoch 300
 ```
@@ -41,6 +43,8 @@ python3 test.py --data data/coco_kpts.yaml --img 960 --conf 0.001 --iou 0.65 --w
 ## Deployment
 ### 1.Export onnx model
 #### a.Run exportOnnx.py to generate yolov7-tiny-pose.onnx
+_Note: make sure that your Class IKeypoint in model/yolo.py is as below running exportOnnx.py_
+![](pic/exportOnnx.png)
 ```python
 import sys
 sys.path.append('./')  # to run '$ python *.py' files in subdirectories
