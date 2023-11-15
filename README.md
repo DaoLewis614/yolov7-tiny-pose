@@ -27,7 +27,7 @@ OpenCV: 4.5.4 with CUDA: NO
 * However the official website does not provide labels for the test set_
   
 ## Train
-_Note: if your training is interrupted and you want to retrain another one, you had better delete the train_2017.cache and val_2017.cache
+_Note: if your training is interrupted and you want to retrain another one, you had better delete the train_2017.cache and val_2017.cache  
        make sure that your Class Ikeypoint in model/yolo.py is as below before running train.py otherwise it would be wrong_
 ![](pic/train.png)
 ``` shell
@@ -45,35 +45,6 @@ python3 test.py --data data/coco_kpts.yaml --img 960 --conf 0.001 --iou 0.65 --w
 #### a.Run exportOnnx.py to generate yolov7-tiny-pose.onnx
 _Note: make sure that your Class IKeypoint in model/yolo.py is as below running exportOnnx.py_
 ![](pic/exportOnnx.png)
-```python
-import sys
-sys.path.append('./')  # to run '$ python *.py' files in subdirectories
-import torch
-import torch.nn as nn
-import models
-from models.experimental import attempt_load
-from utils.activations import Hardswish, SiLU
-
-# Load PyTorch model
-weights = 'yolov7-tiny-pose.pt'
-device = torch.device('cuda:0')
-model = attempt_load(weights, map_location=device)  # load FP32 model
-
-# Update model
-for k, m in model.named_modules():
-    m._non_persistent_buffers_set = set()  # pytorch 1.6.0 compatibility
-    if isinstance(m, models.common.Conv):  # assign export-friendly activations
-        if isinstance(m.act, nn.Hardswish):
-            m.act = Hardswish()
-        elif isinstance(m.act, nn.SiLU):
-            m.act = SiLU()
-model.model[-1].export = True # set Detect() layer grid export
-model.eval()
-
-# Input
-img = torch.randn(1, 3, 960, 960).to(device)  # image size(1,3,320,192) iDetection
-torch.onnx.export(model, img, 'yolov7-tiny-pose.onnx', verbose=False, opset_version=12, input_names=['images'])
-```
 
 #### b.Use onnxsim command to simplify onnx model.
 ```shell
