@@ -27,8 +27,8 @@ OpenCV: 4.5.4 with CUDA: NO
 * However the official website does not provide labels for the test set_
   
 ## Train
-_Note: if your training is interrupted and you want to retrain another one, you had better delete the train_2017.cache and val_2017.cache  
-       make sure that your Class Ikeypoint in model/yolo.py is as below before running train.py otherwise it would be wrong_
+_Note: if your training is interrupted and you want to retrain another one, you had better delete the train_2017.cache and val_2017.cache_  
+      _make sure that your Class Ikeypoint in model/yolo.py is as below before running train.py otherwise it would be wrong_
 ![](pic/train.png)
 ``` shell
 python3 train.py --data data/coco_kpts.yaml --cfg cfg/yolov7-tiny-pose.yaml --weights "" --batch-size 32 --img 640 --kpt-label --name yolov7-tiny-pose --hyp data/hyp_pose.yaml  --epoch 300
