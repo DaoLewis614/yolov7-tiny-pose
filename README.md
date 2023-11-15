@@ -64,7 +64,7 @@ pip3 install cmake
 #### c.Visualize the simplified onnx model using netron.
 ![](pic/onnx-sim.png)
 
-_Note：you must be sure that the output layers in add_custom_yolo_op.py are in alignemnt with the visualization of the model, otherwise：
+_Note：you must be sure that the output layers in add_custom_yolo_op.py are in alignment with the visualization of the model, otherwise：
 inputs = [tensors["400"].to_variable(dtype=np.float32),
 KeyError: '400'  
       put the simiplified onnx model in YoloLayer_TRT_v7.0/script_
