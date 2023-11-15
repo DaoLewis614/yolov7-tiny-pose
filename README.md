@@ -105,7 +105,7 @@ python3 picEngineInfer.py
 
 b. Real-time webcam (the output format, (480, 640, 3))
 ```shell
-python3 webcamEngineInfer.py 
+python3 web-camEngineInfer.py 
 ```
 The FPS is about 100
 
